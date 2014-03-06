@@ -9,3 +9,4 @@ Requirement 5: The number of the employees that the user can enter should not ex
 Requirement 6: Calculate the total normal hours worked by all employees
 Requirement 7: Calculate the total overtime hours worked by all employees
 Requirement 8: Calculate the total wages paid to all employees
+s

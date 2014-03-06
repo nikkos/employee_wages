@@ -54,7 +54,7 @@ class Worker
   end
   
   def to_s
-    "#{@name} work #{@hours} and his rate is #{@payrate} should be paid: #{@pay} "
+    "#{@name} work #{@hours} hours and his rate is #{@payrate} should be paid: #{@pay}$ "
   end
 end
 

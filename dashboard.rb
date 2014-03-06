@@ -28,37 +28,27 @@ class Dashboard
   
 end
 
+if __FILE__ == $0
+puts "Hello User :: Welcome to the Employee's Wages Application "
+puts "What is the your Company name"
+company_name = gets.to_s
+company_name = Dashboard.new(company_name)
+puts "You can enter only 10 employees in the system."
+puts "How many employees, you want to add in the system ? (1 - 10)"
+employee_number = gets.to_i
+employee_number.times do |n|
+  puts "Enter Employee's #{n} Name:"
+  employee_name = gets.to_s
+  puts "Enter Employee's #{n} Hours:"
+  employee_hours = gets.to_i
+  puts "Enter Employee's #{n}Rate:"
+  employee_rate = gets.to_i
+  employee_name = Worker.new(employee_name, employee_hours, employee_rate)
+  employee_name.countrate
+  employee_name.wages
+  company_name.add_worker(employee_name)
+end
 
-worker1 = Worker.new("nikkos", 10, 5.5 )
-worker2 = Worker.new("Giannis", 40, 10)
-worker3 = Worker.new("Kostas", 40, 8)
-worker4 = Worker.new("Ntinos", 25, 10)
-worker5 = Worker.new("Fanis", 60, 10)
-worker6 = Worker.new("Manos", 0, 10)
-
-worker1.countrate
-worker1.wages
-
-worker2.countrate
-worker2.wages
-
-worker3.countrate
-worker3.wages
-
-worker4.countrate
-worker4.wages
-
-worker5.countrate
-worker5.wages
-
-worker6.countrate
-worker6.wages
-
-
-demo1 = Dashboard.new("Demo1")
-demo1.add_worker(worker1)
-demo1.add_worker(worker2)
-demo1.add_worker(worker4)
-demo1.add_worker(worker5)
-demo1.add_worker(worker6)
-demo1.print_stats
+puts "The stats of all Employees are:"
+puts company_name.print_stats
+end

@@ -14,6 +14,10 @@ class Worker
     if @hours <= 35
       @regular = @hours * @payrate
       @overtime = 0.0
+    elsif
+      @hours >= 50
+      @regular = 35 * @payrate
+      @overtime = (50 - 35) * @payrate * 1.5 
     else
       self.overtime_calc
     end
@@ -35,14 +39,18 @@ class Worker
   
   def overtime_hours
     if @hours >= 35
-      @overtime = @hours - 35
+       @hours = @hours - 35
     else
       @hours = 0
     end
   end
   
   def normal_hours
-    
+    if @hours >= 35
+      @hours = 35
+    else
+      @hours = @hours
+    end
   end
   
   def to_s

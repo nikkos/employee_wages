@@ -15,20 +15,15 @@ class Dashboard
     @workers.each do |w|
       puts w.to_s
     end
-    
-    
-    @workers.each do |w|
-      puts w.name
-      puts w.overtime_hours
-    end
   
     puts "Total Wages:"
     puts @workers.reduce(0) { |sum, w| sum + w.pay }
      
-    puts "Total Overtime Hours:"
-    puts @workers.reduce(0) { |sum, w| sum + w.overtime_hours}
+    puts "Total Normal Hours:"
+    puts @workers.reduce(0) { |sum, w| sum + w.normal_hours}
     
-    puts "Total Normal Hours"
+    puts "Total Overtime Hours"
+    puts @workers.reduce(0) { |sum, w| sum + w.overtime_hours}
   end
   
 end
@@ -58,6 +53,7 @@ worker5.wages
 
 worker6.countrate
 worker6.wages
+
 
 demo1 = Dashboard.new("Demo1")
 demo1.add_worker(worker1)

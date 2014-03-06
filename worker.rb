@@ -39,17 +39,17 @@ class Worker
   
   def overtime_hours
     if @hours >= 35
-       @hours = @hours - 35
+       @overtime_hours = @hours - 35
     else
-      @hours = 0
+      @overtime_hours = 0
     end
   end
   
   def normal_hours
     if @hours >= 35
-      @hours = 35
+      @normal_hours = 35
     else
-      @hours = @hours
+      @normal_hours = @hours
     end
   end
   
